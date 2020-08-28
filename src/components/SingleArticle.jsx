@@ -5,7 +5,7 @@ class SingleArticle extends Component {
   render() {
     return (
       <div>
-        <h1>Article heading</h1>
+        <h2>Article heading</h2>
         <p>
           author: <Link to="/users/:username">username</Link>
         </p>

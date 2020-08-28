@@ -1,13 +1,14 @@
 import React, { Component } from "react";
 import { Link } from "@reach/router";
+import { StyledArticleCard } from "../styles/lib";
 
 class ArticleCard extends Component {
   render() {
     return (
-      <div>
-        <h1>
+      <StyledArticleCard>
+        <h2>
           <Link to="/users/:username/:article_id">article title</Link>
-        </h1>
+        </h2>
         <p>
           author: <Link to="/users/:username">username</Link>
         </p>
@@ -17,7 +18,7 @@ class ArticleCard extends Component {
         <p>
           <img src="" alt="speech bubble icon" />: [number of comments]
         </p>
-      </div>
+      </StyledArticleCard>
     );
   }
 }

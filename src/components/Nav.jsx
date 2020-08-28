@@ -1,14 +1,15 @@
 import React, { Component } from "react";
 import { Link } from "@reach/router";
+import { StyledSideBar, StyledNavList } from "../styles/lib";
 
 class Nav extends Component {
   render() {
     return (
-      <div>
+      <StyledSideBar>
         <h3>Topics</h3>
         <nav>
           {/* topic names on the nav bar will be fetched from api */}
-          <ul>
+          <StyledNavList>
             <li>
               <Link to="/topics/football">Football</Link>
             </li>
@@ -18,9 +19,9 @@ class Nav extends Component {
             <li>
               <Link to="/topics/cooking">Cooking</Link>
             </li>
-          </ul>
+          </StyledNavList>
         </nav>
-      </div>
+      </StyledSideBar>
     );
   }
 }

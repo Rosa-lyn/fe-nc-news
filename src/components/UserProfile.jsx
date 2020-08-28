@@ -4,8 +4,8 @@ const UserProfile = () => {
   return (
     <div>
       <img src="" alt="pic of the user" />
-      <h1>Name</h1>
-      <p>username</p>
+      <h2>Name</h2>
+      <h3>username</h3>
     </div>
   );
 };

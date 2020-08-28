@@ -6,12 +6,13 @@ import Articles from "./components/Articles";
 import SingleArticle from "./components/SingleArticle";
 import User from "./components/User";
 import { Router } from "@reach/router";
+import { MainLayout } from "./styles/lib";
 
 function App() {
   return (
     <div className="App">
       <Header />
-      <main>
+      <MainLayout>
         <Nav />
 
         <Router>
@@ -24,7 +25,7 @@ function App() {
           <User path="/users/:username" />
           <SingleArticle path="/users/:username/:article_id" />
         </Router>
-      </main>
+      </MainLayout>
     </div>
   );
 }

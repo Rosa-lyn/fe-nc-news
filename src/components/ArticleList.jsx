@@ -1,10 +1,11 @@
 import React from "react";
 import ArticleCard from "./ArticleCard";
+import { StyledArticleList } from "../styles/lib";
 
 const ArticleList = () => {
   return (
     <div>
-      <ul>
+      <StyledArticleList>
         <li>
           <ArticleCard />
         </li>
@@ -17,7 +18,7 @@ const ArticleList = () => {
         <li>
           <ArticleCard />
         </li>
-      </ul>
+      </StyledArticleList>
     </div>
   );
 };
