@@ -24,16 +24,16 @@ Here's a guide to approaching any React project. It's not an absolutely strict s
 
 ## Static
 
-- [ ] Make blank components (functional or class?) as per your plan
-- [ ] Create reuasable components e.g. buttons, inputs
-- [ ] Export and import components as per your hierarchy
-- [ ] Check everything is hooked up
-  - [ ] you may want to add positional styling here to match your planned layout. DO NOT do any cosmetic styling yet!
-- [ ] Write static render methods with mock data
+- [x] Make blank components (functional or class?) as per your plan
+- [x] Create reuasable components e.g. buttons, inputs
+- [x] Export and import components as per your hierarchy
+- [x] Check everything is hooked up
+  - [x] you may want to add positional styling here to match your planned layout. DO NOT do any cosmetic styling yet!
+- [x] Write static render methods with mock data
 
 ## Dynamic (order may be a bit looser here!)
 
-- [ ] Create .api file
+- [x] Create .api file
 - [ ] Construct componentDidMount functions
 - [ ] Create functions that setState
 - [ ] Add expected props to component instantiation

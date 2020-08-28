@@ -5,7 +5,7 @@ export const MainLayout = styled.div`
   grid-template-columns: minmax(100px, 16.7%) auto 1fr;
 `;
 
-export const StyledHeader = styled.p`
+export const StyledHeader = styled.div`
   display: flex;
   justify-content: flex-start;
   background-color: lightsteelblue;

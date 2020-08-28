@@ -7,16 +7,18 @@ class ArticleCard extends Component {
     return (
       <StyledArticleCard>
         <h2>
-          <Link to="/users/:username/:article_id">article title</Link>
+          <Link to="/users/:username/article_id">{this.props.title}</Link>
         </h2>
         <p>
-          author: <Link to="/users/:username">username</Link>
-        </p>
-        <p>
-          <img src="" alt="thumbs up icon" />: [number of upvotes]
-        </p>
-        <p>
-          <img src="" alt="speech bubble icon" />: [number of comments]
+          author: <Link to="/users/:username">{this.props.author}</Link>
+          <span role="img" aria-label="thumbs-up">
+            👍🏽
+          </span>{" "}
+          : {this.props.votes}
+          <span role="img" aria-label="speech-balloon">
+            💬
+          </span>{" "}
+          : {this.props.comment_count}
         </p>
       </StyledArticleCard>
     );
