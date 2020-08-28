@@ -10,17 +10,17 @@ Here's a guide to approaching any React project. It's not an absolutely strict s
 - [x] Break out components from your views
 - [x] Name your components
 - [x] Draw component hierarchy
-- [ ] Plan routing
+- [x] Plan routing
 - [x] Label where you will require functions that change state
-- [ ] Label where you will require data
-- [ ] Determine from this where you will require state & hold functions
+- [x] Label where you will require data
+- [x] Determine from this where you will require state & hold functions
 
 ## Setup
 
 - [x] Create your app directory (e.g. with create-react-app)
-- [ ] Run your app
-- [ ] Git init (unless cloned!), gitignore config, make an initial commit
-- [ ] Ensure you have React DevTools running
+- [x] Run your app
+- [x] Git init (unless cloned!), gitignore config, make an initial commit
+- [x] Ensure you have React DevTools running
 
 ## Static
 
