@@ -8,10 +8,15 @@ export const MainLayout = styled.div`
 export const StyledHeader = styled.div`
   display: flex;
   justify-content: flex-start;
+  align-items: center;
   background-color: lightsteelblue;
-  padding: 10px;
+  padding: 20px;
   margin: 0px;
 `;
+export const StyledTitle = styled.h1`
+  display: inline;
+`;
+
 export const StyledSideBar = styled.div`
   background-color: grey;
 `;
