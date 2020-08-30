@@ -1,12 +1,13 @@
 import React from "react";
 
-const UserProfile = () => {
+const UserProfile = (props) => {
+  const { user } = props;
   return (
-    <div>
-      <img src="" alt="pic of the user" />
-      <h2>Name</h2>
-      <h3>username</h3>
-    </div>
+    <section>
+      <img src={user.avatar_url} alt={user.name} />
+      <h2>{user.name}</h2>
+      <h3>{user.username}</h3>
+    </section>
   );
 };
 

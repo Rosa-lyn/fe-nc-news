@@ -10,7 +10,8 @@ class ArticleCard extends Component {
           <Link to="/users/:username/article_id">{this.props.title}</Link>
         </h2>
         <p>
-          author: <Link to="/users/:username">{this.props.author}</Link>
+          author:{" "}
+          <Link to={`/users/${this.props.author}`}>{this.props.author}</Link>
           <span role="img" aria-label="thumbs-up">
             👍🏽
           </span>{" "}

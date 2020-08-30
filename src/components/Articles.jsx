@@ -22,10 +22,10 @@ class Articles extends Component {
     }
   }
 
-  getArticles = () => {
-    const { topic } = this.props;
-    return api.getArticles(topic);
-  };
+  getArticles() {
+    const { topic, author } = this.props;
+    return api.getArticles(topic, author);
+  }
 
   render() {
     const { articles } = this.state;
