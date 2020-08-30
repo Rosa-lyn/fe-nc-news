@@ -4,22 +4,22 @@ import { StyledArticleCard } from "../styles/lib";
 
 class ArticleCard extends Component {
   render() {
+    const { article_id, title, author, comment_count, votes } = this.props;
     return (
       <StyledArticleCard>
         <h2>
-          <Link to="/users/:username/article_id">{this.props.title}</Link>
+          <Link to={`/articles/${article_id}`}>{title}</Link>
         </h2>
         <p>
-          author:{" "}
-          <Link to={`/users/${this.props.author}`}>{this.props.author}</Link>
+          author: <Link to={`/users/${author}`}>{author}</Link>
           <span role="img" aria-label="thumbs-up">
             👍🏽
           </span>{" "}
-          : {this.props.votes}
+          : {votes}
           <span role="img" aria-label="speech-balloon">
             💬
           </span>{" "}
-          : {this.props.comment_count}
+          : {comment_count}
         </p>
         {/* <p>topic: {this.props.topic}</p> */}
       </StyledArticleCard>

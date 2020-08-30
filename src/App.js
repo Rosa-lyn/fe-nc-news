@@ -23,7 +23,7 @@ function App() {
           <Articles path="/:topic" />
 
           <User path="/users/:username" />
-          <SingleArticle path="/users/:username/:article_id" />
+          <SingleArticle path="articles/:article_id" />
         </Router>
       </MainLayout>
     </div>

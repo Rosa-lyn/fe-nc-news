@@ -13,6 +13,7 @@ function ArticleList({ articles, topic }) {
               author={article.author}
               votes={article.votes}
               comment_count={article.comment_count}
+              article_id={article.article_id}
               // topic={article.topic}
             />
           </li>

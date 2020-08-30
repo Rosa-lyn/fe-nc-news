@@ -23,15 +23,16 @@ class Articles extends Component {
   }
 
   getArticles() {
-    const { topic, author } = this.props;
-    return api.getArticles(topic, author);
+    const { topic, author, sort_by } = this.props;
+    return api.getArticles(topic, author, sort_by);
   }
 
   render() {
     const { articles } = this.state;
+    const { sort_by } = this.props;
     return (
       <div>
-        <FilterBar />
+        <FilterBar sort_by={sort_by} />
         <ArticleList articles={articles} />
       </div>
     );
