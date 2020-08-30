@@ -20,7 +20,7 @@ function App() {
           <Articles path="/" />
 
           {/* all articles of certain topic */}
-          <Articles path="/topics/:topic_slug" />
+          <Articles path="/:topic" />
 
           <User path="/users/:username" />
           <SingleArticle path="/users/:username/:article_id" />

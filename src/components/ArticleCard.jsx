@@ -20,6 +20,7 @@ class ArticleCard extends Component {
           </span>{" "}
           : {this.props.comment_count}
         </p>
+        {/* <p>topic: {this.props.topic}</p> */}
       </StyledArticleCard>
     );
   }

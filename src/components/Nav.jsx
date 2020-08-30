@@ -25,7 +25,7 @@ class Nav extends Component {
             {topics.map((topic) => {
               return (
                 <li key={topic.slug}>
-                  <Link to={`/topics/${topic.slug}`}>{topic.slug}</Link>
+                  <Link to={`/${topic.slug}`}>{topic.slug}</Link>
                 </li>
               );
             })}
