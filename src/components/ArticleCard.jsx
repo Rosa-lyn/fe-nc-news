@@ -7,9 +7,9 @@ class ArticleCard extends Component {
     const { article_id, title, author, comment_count, votes } = this.props;
     return (
       <StyledArticleCard>
-        <h2>
+        <h3>
           <Link to={`/articles/${article_id}`}>{title}</Link>
-        </h2>
+        </h3>
         <p>
           author: <Link to={`/users/${author}`}>{author}</Link>
           <span role="img" aria-label="thumbs-up">

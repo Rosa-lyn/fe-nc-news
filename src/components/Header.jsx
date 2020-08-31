@@ -1,15 +1,13 @@
 import React from "react";
 import { Link } from "@reach/router";
-import { StyledHeader, StyledTitle } from "../styles/lib";
+import { StyledHeader, StyledLogo } from "../styles/lib";
+import logo from "../images/logo.png";
 
 const Header = () => {
   return (
     <StyledHeader>
       <Link to="/">
-        <span role="img" aria-label="house">
-          🏠
-        </span>
-        <StyledTitle>The News Den</StyledTitle>
+        <StyledLogo src={logo} alt="The News Den logo" />
       </Link>
     </StyledHeader>
   );

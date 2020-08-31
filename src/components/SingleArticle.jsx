@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "@reach/router";
 import * as api from "../utils/api";
+import { StyledArticleBody } from "../styles/lib";
 
 class SingleArticle extends Component {
   state = {
@@ -13,12 +14,10 @@ class SingleArticle extends Component {
   }
   getArticle() {
     const { article_id } = this.props;
-    console.log(article_id);
     return api.getSingleArticle(article_id);
   }
   render() {
     const { article } = this.state;
-    console.log(this.props.article_id);
     return (
       <div>
         <h2>{article.title}</h2>
@@ -26,7 +25,7 @@ class SingleArticle extends Component {
         <p>
           author: <Link to={`/users/${article.author}`}>{article.author}</Link>
         </p>
-        <p>{article.body}</p>
+        <StyledArticleBody>{article.body}</StyledArticleBody>
       </div>
     );
   }
