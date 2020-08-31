@@ -58,3 +58,12 @@ export const StyledArticleBody = styled.p`
   line-height: 20pt;
   text-align: left;
 `;
+
+export const StyledFooter = styled.p`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f2c32c;
+  padding: 10px;
+  margin: 0;
+`;

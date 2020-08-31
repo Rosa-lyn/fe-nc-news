@@ -5,6 +5,7 @@ import Nav from "./components/Nav";
 import Articles from "./components/Articles";
 import SingleArticle from "./components/SingleArticle";
 import User from "./components/User";
+import Footer from "./components/Footer";
 import { Router } from "@reach/router";
 import { MainLayout } from "./styles/lib";
 
@@ -26,6 +27,7 @@ function App() {
           <SingleArticle path="articles/:article_id" />
         </Router>
       </MainLayout>
+      <Footer />
     </div>
   );
 }
