@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "@reach/router";
 import * as api from "../utils/api";
-import { StyledArticleBody } from "../styles/lib";
+import { StyledArticleBody } from "../styles/singleArticleStyles";
 
 class SingleArticle extends Component {
   state = {

@@ -1,8 +1,8 @@
 import React from "react";
 import ArticleCard from "./ArticleCard";
-import { StyledArticleList } from "../styles/lib";
+import { StyledArticleList } from "../styles/articleListStyles";
 
-function ArticleList({ articles, topic }) {
+function ArticleList({ articles }) {
   return (
     <StyledArticleList>
       {articles.map((article) => {

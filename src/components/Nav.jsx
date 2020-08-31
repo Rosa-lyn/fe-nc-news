@@ -1,11 +1,16 @@
 import React, { Component } from "react";
 import { Link } from "@reach/router";
-import { StyledSideBar, StyledNavList } from "../styles/lib";
+import {
+  StyledButton,
+  StyledNavList,
+  StyledNavListItem,
+} from "../styles/navStyles";
 import * as api from "../utils/api";
 
 class Nav extends Component {
   state = {
     topics: [],
+    value: "all",
   };
   componentDidMount() {
     this.getTopics().then((topics) => {
@@ -15,23 +20,31 @@ class Nav extends Component {
   getTopics() {
     return api.getTopics();
   }
+  handleChange(event) {
+    const { value } = event.target;
+    this.setState({ value });
+  }
   render() {
     const { topics } = this.state;
     return (
-      <StyledSideBar>
-        <h3>Topics</h3>
-        <nav>
-          <StyledNavList>
-            {topics.map((topic) => {
-              return (
-                <li key={topic.slug}>
-                  <Link to={`/${topic.slug}`}>{topic.slug}</Link>
-                </li>
-              );
-            })}
-          </StyledNavList>
-        </nav>
-      </StyledSideBar>
+      <nav>
+        <StyledNavList>
+          <StyledNavListItem key="all">
+            <Link to="/">all</Link>
+          </StyledNavListItem>
+          {topics.map((topic) => {
+            return (
+              <StyledNavListItem key={topic.slug}>
+                <Link to={`/${topic.slug}`}>{topic.slug}</Link>
+              </StyledNavListItem>
+            );
+          })}
+        </StyledNavList>
+
+        <StyledButton>hot</StyledButton>
+        <StyledButton>new</StyledButton>
+        <StyledButton>talked about</StyledButton>
+      </nav>
     );
   }
 }

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "@reach/router";
-import { StyledArticleCard } from "../styles/lib";
+import { StyledArticleCard } from "../styles/articleCardStyles";
 
 class ArticleCard extends Component {
   render() {
@@ -12,6 +12,8 @@ class ArticleCard extends Component {
         </h3>
         <p>
           author: <Link to={`/users/${author}`}>{author}</Link>
+        </p>
+        <p>
           <span role="img" aria-label="thumbs-up">
             👍🏽
           </span>{" "}

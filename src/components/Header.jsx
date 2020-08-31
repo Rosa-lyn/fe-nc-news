@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "@reach/router";
-import { StyledHeader, StyledLogo } from "../styles/lib";
+import { StyledHeader, StyledLogo } from "../styles/headerStyles";
 import logo from "../images/logo.png";
 
 const Header = () => {
