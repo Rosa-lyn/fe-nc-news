@@ -1,16 +1,18 @@
 import React, { Component } from "react";
 import ArticleList from "./ArticleList";
+import Loader from "./Loader";
 import { StyledButton } from "../styles/navStyles";
 import * as api from "../utils/api";
 
 class Home extends Component {
   state = {
     articles: [],
+    isLoading: true,
   };
 
   componentDidMount() {
     this.getArticles().then((articles) => {
-      this.setState({ articles });
+      this.setState({ articles, isLoading: false });
     });
   }
 
@@ -28,7 +30,8 @@ class Home extends Component {
   }
 
   render() {
-    const { articles } = this.state;
+    const { articles, isLoading } = this.state;
+    if (isLoading) return <Loader />;
     return (
       <div>
         <StyledButton>hot</StyledButton>

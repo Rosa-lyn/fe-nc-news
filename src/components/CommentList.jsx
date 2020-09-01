@@ -1,12 +1,10 @@
 import React, { Component } from "react";
 import CommentCard from "./CommentCard";
+import Loader from "./Loader";
 import * as api from "../utils/api";
 
 class CommentList extends Component {
   state = { comments: [], isLoading: true };
-  // get the comments for the article based on its id
-  // GET /api/articles/:article_id/comments
-  // loop through and display as cards/list items
   componentDidMount() {
     this.getCommentsByArticleId().then((comments) => {
       this.setState({ comments, isLoading: false });
@@ -19,10 +17,16 @@ class CommentList extends Component {
   }
   render() {
     const { comments, isLoading } = this.state;
-    if (isLoading) return <p>loading...</p>;
+    if (isLoading) return <Loader />;
     return (
       <div>
-        <CommentCard comment={comments[0]} />
+        {comments.map((comment) => {
+          return (
+            <li key={comment.comment_id}>
+              <CommentCard comment={comment} />
+            </li>
+          );
+        })}
       </div>
     );
   }

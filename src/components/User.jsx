@@ -1,12 +1,14 @@
 import React, { Component } from "react";
 import UserProfile from "./UserProfile";
 import ArticleList from "./ArticleList";
+import Loader from "./Loader";
 import * as api from "../utils/api";
 
 class User extends Component {
   state = {
     user: {},
     articles: [],
+    isLoading: true,
   };
 
   componentDidMount() {
@@ -14,7 +16,7 @@ class User extends Component {
       this.setState({ user });
     });
     this.getArticles().then((articles) => {
-      this.setState({ articles });
+      this.setState({ articles, isLoading: false });
     });
   }
 
@@ -30,7 +32,8 @@ class User extends Component {
 
   render() {
     const { username } = this.props;
-    const { user, articles } = this.state;
+    const { user, articles, isLoading } = this.state;
+    if (isLoading) return <Loader />;
     return (
       <div>
         <UserProfile user={user} />

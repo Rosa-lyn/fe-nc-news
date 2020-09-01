@@ -1,31 +1,31 @@
 import React, { Component } from "react";
 import { Link } from "@reach/router";
 import CommentList from "./CommentList";
+import Loader from "./Loader";
 import { StyledArticleBody } from "../styles/singleArticleStyles";
 import * as api from "../utils/api";
 
 class SingleArticle extends Component {
   state = {
     article: {},
+    isLoading: true,
   };
 
   componentDidMount() {
     this.getSingleArticle().then((article) => {
-      this.setState({ article });
-      // console.log(this.state);
+      this.setState({ article, isLoading: false });
     });
   }
 
   getSingleArticle() {
     const { article_id } = this.props;
-    // console.log(article_id);
     return api.getSingleArticle(article_id);
   }
 
   render() {
-    const { article } = this.state;
+    const { article, isLoading } = this.state;
     const { article_id } = this.props;
-    // console.log(article);
+    if (isLoading) return <Loader />;
     return (
       <div>
         <h2>{article.title}</h2>

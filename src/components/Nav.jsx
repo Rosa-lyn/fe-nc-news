@@ -1,16 +1,18 @@
 import React, { Component } from "react";
 import { Link } from "@reach/router";
+import Loader from "./Loader";
 import { StyledNavList, StyledNavListItem } from "../styles/navStyles";
 import * as api from "../utils/api";
 
 class Nav extends Component {
   state = {
     topics: [],
+    isLoading: true,
   };
 
   componentDidMount() {
     this.getTopics().then((topics) => {
-      this.setState({ topics });
+      this.setState({ topics, isLoading: false });
     });
   }
 
@@ -19,7 +21,8 @@ class Nav extends Component {
   }
 
   render() {
-    const { topics } = this.state;
+    const { topics, isLoading } = this.state;
+    if (isLoading) return <Loader />;
     return (
       <nav>
         <StyledNavList>
