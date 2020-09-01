@@ -19,7 +19,7 @@ function ArticleCard(props) {
         </span>{" "}
         : {comment_count}
       </p>
-      <Voter votes={votes} article_id={article_id} type="articles" />
+      <Voter votes={votes} id={article_id} type="articles" />
     </StyledArticleCard>
   );
 }

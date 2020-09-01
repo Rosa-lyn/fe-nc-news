@@ -36,7 +36,7 @@ class SingleArticle extends Component {
           author: <Link to={`/users/${article.author}`}>{article.author}</Link>
         </p>
         <StyledArticleBody>{article.body}</StyledArticleBody>
-        <Voter votes={votes} article_id={article_id} type="articles" />
+        <Voter votes={votes} id={article_id} type="articles" />
         <CommentList article_id={article_id} />
       </div>
     );

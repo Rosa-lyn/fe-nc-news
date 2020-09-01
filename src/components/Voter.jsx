@@ -14,8 +14,8 @@ class Voter extends Component {
   };
 
   patchVotes(vote) {
-    const { article_id, type } = this.props;
-    return api.patchVotes(article_id, vote, type);
+    const { id, type } = this.props;
+    return api.patchVotes(id, vote, type);
   }
   render() {
     const { votes } = this.props;

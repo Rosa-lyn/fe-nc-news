@@ -36,6 +36,6 @@ export const getCommentsByArticleId = (article_id) => {
   });
 };
 
-export const patchVotes = (article_id, inc_votes, type) => {
-  return axiosInstance.patch(`/${type}/${article_id}`, { inc_votes });
+export const patchVotes = (id, inc_votes, type) => {
+  return axiosInstance.patch(`/${type}/${id}`, { inc_votes });
 };
