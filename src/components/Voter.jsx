@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { StyledVoteButton } from "../styles/voterButtonStyles";
 import * as api from "../utils/api";
 
 class Voter extends Component {
@@ -19,11 +20,10 @@ class Voter extends Component {
   }
   render() {
     const { votes } = this.props;
-    // console.log(this.props);
     const { optimisticVotes } = this.state;
     return (
       <div>
-        <button
+        <StyledVoteButton
           onClick={(event) => {
             this.updateVote(1);
           }}
@@ -32,9 +32,9 @@ class Voter extends Component {
           <span role="img" aria-label="thumbs-up">
             👍
           </span>
-        </button>
+        </StyledVoteButton>
         {votes + optimisticVotes}
-        <button
+        <StyledVoteButton
           onClick={() => {
             this.updateVote(-1);
           }}
@@ -43,7 +43,7 @@ class Voter extends Component {
           <span role="img" aria-label="thumbs-down">
             👎
           </span>
-        </button>
+        </StyledVoteButton>
       </div>
     );
   }
