@@ -3,7 +3,7 @@ import { Link } from "@reach/router";
 import { StyledHeader, StyledLogo } from "../styles/headerStyles";
 import logo from "../images/logo.png";
 
-const Header = () => {
+function Header() {
   return (
     <StyledHeader>
       <Link to="/">
@@ -11,6 +11,6 @@ const Header = () => {
       </Link>
     </StyledHeader>
   );
-};
+}
 
 export default Header;

@@ -12,18 +12,22 @@ class Nav extends Component {
     topics: [],
     value: "all",
   };
+
   componentDidMount() {
     this.getTopics().then((topics) => {
       this.setState({ topics });
     });
   }
+
   getTopics() {
     return api.getTopics();
   }
+
   handleChange(event) {
     const { value } = event.target;
     this.setState({ value });
   }
+
   render() {
     const { topics } = this.state;
     return (

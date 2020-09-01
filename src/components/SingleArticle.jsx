@@ -7,15 +7,18 @@ class SingleArticle extends Component {
   state = {
     article: {},
   };
+
   componentDidMount() {
     this.getArticle().then((article) => {
       this.setState({ article });
     });
   }
+
   getArticle() {
     const { article_id } = this.props;
     return api.getSingleArticle(article_id);
   }
+
   render() {
     const { article } = this.state;
     return (

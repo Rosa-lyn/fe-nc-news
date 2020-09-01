@@ -4,8 +4,9 @@ import {
   StyledUserImg,
 } from "../styles/userProfileStyles";
 
-const UserProfile = (props) => {
+function UserProfile(props) {
   const { user } = props;
+
   return (
     <StyledProfileLayout>
       <StyledUserImg src={user.avatar_url} alt={user.name} />
@@ -15,6 +16,6 @@ const UserProfile = (props) => {
       </div>
     </StyledProfileLayout>
   );
-};
+}
 
 export default UserProfile;

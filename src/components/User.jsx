@@ -8,6 +8,7 @@ class User extends Component {
     user: {},
     articles: [],
   };
+
   componentDidMount() {
     this.getUser().then((user) => {
       this.setState({ user });
@@ -16,14 +17,17 @@ class User extends Component {
       this.setState({ articles });
     });
   }
+
   getUser() {
     const { username } = this.props;
     return api.getUserByUsername(username);
   }
+
   getArticles() {
     const { topic, author } = this.props;
     return api.getArticles(topic, author);
   }
+
   render() {
     const { username } = this.props;
     const { user, articles } = this.state;
