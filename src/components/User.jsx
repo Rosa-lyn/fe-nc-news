@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import UserProfile from "./UserProfile";
-import * as api from "../utils/api";
 import ArticleList from "./ArticleList";
+import * as api from "../utils/api";
 
 class User extends Component {
   state = {
@@ -35,6 +35,7 @@ class User extends Component {
       <div>
         <UserProfile user={user} />
         <ArticleList author={username} articles={articles} />
+        {/* put home component instead of article list, then we don't need getarticles in here */}
       </div>
     );
   }

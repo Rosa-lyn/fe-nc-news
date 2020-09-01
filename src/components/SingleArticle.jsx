@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import { Link } from "@reach/router";
-import * as api from "../utils/api";
+import CommentList from "./CommentList";
 import { StyledArticleBody } from "../styles/singleArticleStyles";
+import * as api from "../utils/api";
 
 class SingleArticle extends Component {
   state = {
@@ -9,18 +10,22 @@ class SingleArticle extends Component {
   };
 
   componentDidMount() {
-    this.getArticle().then((article) => {
+    this.getSingleArticle().then((article) => {
       this.setState({ article });
+      // console.log(this.state);
     });
   }
 
-  getArticle() {
+  getSingleArticle() {
     const { article_id } = this.props;
+    // console.log(article_id);
     return api.getSingleArticle(article_id);
   }
 
   render() {
     const { article } = this.state;
+    const { article_id } = this.props;
+    // console.log(article);
     return (
       <div>
         <h2>{article.title}</h2>
@@ -29,6 +34,7 @@ class SingleArticle extends Component {
           author: <Link to={`/users/${article.author}`}>{article.author}</Link>
         </p>
         <StyledArticleBody>{article.body}</StyledArticleBody>
+        <CommentList article_id={article_id} />
       </div>
     );
   }

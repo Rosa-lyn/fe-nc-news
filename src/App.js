@@ -1,6 +1,7 @@
 import React from "react";
 import "./App.css";
 import Header from "./components/Header";
+import Nav from "./components/Nav";
 import Home from "./components/Home";
 import SingleArticle from "./components/SingleArticle";
 import User from "./components/User";
@@ -11,6 +12,8 @@ function App() {
   return (
     <div className="App">
       <Header />
+      <Nav />
+
       <Router>
         {/* all articles */}
         <Home path="/" />

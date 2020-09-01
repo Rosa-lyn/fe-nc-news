@@ -1,16 +1,11 @@
 import React, { Component } from "react";
 import { Link } from "@reach/router";
-import {
-  StyledButton,
-  StyledNavList,
-  StyledNavListItem,
-} from "../styles/navStyles";
+import { StyledNavList, StyledNavListItem } from "../styles/navStyles";
 import * as api from "../utils/api";
 
 class Nav extends Component {
   state = {
     topics: [],
-    value: "all",
   };
 
   componentDidMount() {
@@ -21,11 +16,6 @@ class Nav extends Component {
 
   getTopics() {
     return api.getTopics();
-  }
-
-  handleChange(event) {
-    const { value } = event.target;
-    this.setState({ value });
   }
 
   render() {
@@ -44,10 +34,6 @@ class Nav extends Component {
             );
           })}
         </StyledNavList>
-
-        <StyledButton>hot</StyledButton>
-        <StyledButton>new</StyledButton>
-        <StyledButton>talked about</StyledButton>
       </nav>
     );
   }

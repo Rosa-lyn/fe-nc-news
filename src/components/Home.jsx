@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import ArticleList from "./ArticleList";
-import Nav from "./Nav";
+import { StyledButton } from "../styles/navStyles";
 import * as api from "../utils/api";
 
 class Home extends Component {
@@ -31,7 +31,9 @@ class Home extends Component {
     const { articles } = this.state;
     return (
       <div>
-        <Nav />
+        <StyledButton>hot</StyledButton>
+        <StyledButton>new</StyledButton>
+        <StyledButton>talked about</StyledButton>
         <ArticleList articles={articles} />
       </div>
     );
