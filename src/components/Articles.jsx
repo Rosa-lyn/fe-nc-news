@@ -4,7 +4,7 @@ import Loader from "./Loader";
 import { StyledButton } from "../styles/navStyles";
 import * as api from "../utils/api";
 
-class Home extends Component {
+class Articles extends Component {
   state = {
     articles: [],
     isLoading: true,
@@ -43,4 +43,4 @@ class Home extends Component {
   }
 }
 
-export default Home;
+export default Articles;
