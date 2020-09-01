@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import CommentCard from "./CommentCard";
 import Loader from "./Loader";
+import { StyledCommentList } from "../styles/commentListStyles";
 import * as api from "../utils/api";
 
 class CommentList extends Component {
@@ -22,9 +23,9 @@ class CommentList extends Component {
       <div>
         {comments.map((comment) => {
           return (
-            <li key={comment.comment_id}>
+            <StyledCommentList key={comment.comment_id}>
               <CommentCard comment={comment} />
-            </li>
+            </StyledCommentList>
           );
         })}
       </div>
