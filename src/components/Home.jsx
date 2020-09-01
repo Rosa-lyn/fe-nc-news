@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import ArticleList from "./ArticleList";
+import Nav from "./Nav";
 import * as api from "../utils/api";
 
-class Articles extends Component {
+class Home extends Component {
   state = {
     articles: [],
   };
@@ -30,10 +31,11 @@ class Articles extends Component {
     const { articles } = this.state;
     return (
       <div>
+        <Nav />
         <ArticleList articles={articles} />
       </div>
     );
   }
 }
 
-export default Articles;
+export default Home;

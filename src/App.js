@@ -1,8 +1,7 @@
 import React from "react";
 import "./App.css";
 import Header from "./components/Header";
-import Nav from "./components/Nav";
-import Articles from "./components/Articles";
+import Home from "./components/Home";
 import SingleArticle from "./components/SingleArticle";
 import User from "./components/User";
 import Footer from "./components/Footer";
@@ -12,13 +11,12 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <Nav />
       <Router>
         {/* all articles */}
-        <Articles path="/" />
+        <Home path="/" />
 
         {/* all articles of certain topic */}
-        <Articles path="/:topic" />
+        <Home path="/:topic" />
 
         <User path="/users/:username" />
         <SingleArticle path="articles/:article_id" />
