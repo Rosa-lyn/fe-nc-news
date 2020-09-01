@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import UserProfile from "./UserProfile";
-// import ArticleList from "./ArticleList";
 import Articles from "./Articles";
 import Loader from "./Loader";
 import * as api from "../utils/api";

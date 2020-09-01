@@ -32,7 +32,10 @@ export const getSingleArticle = (article_id) => {
 
 export const getCommentsByArticleId = (article_id) => {
   return axiosInstance.get(`/articles/${article_id}/comments`).then((res) => {
-    // console.log(res.data.comments);
     return res.data.comments;
   });
+};
+
+export const patchVotes = (article_id, inc_votes, type) => {
+  return axiosInstance.patch(`/${type}/${article_id}`, { inc_votes });
 };

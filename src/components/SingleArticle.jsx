@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link } from "@reach/router";
 import CommentList from "./CommentList";
 import Loader from "./Loader";
+import Voter from "./Voter";
 import { StyledArticleBody } from "../styles/singleArticleStyles";
 import * as api from "../utils/api";
 
@@ -25,6 +26,7 @@ class SingleArticle extends Component {
   render() {
     const { article, isLoading } = this.state;
     const { article_id } = this.props;
+    const { votes } = this.state.article;
     if (isLoading) return <Loader />;
     return (
       <div>
@@ -34,6 +36,7 @@ class SingleArticle extends Component {
           author: <Link to={`/users/${article.author}`}>{article.author}</Link>
         </p>
         <StyledArticleBody>{article.body}</StyledArticleBody>
+        <Voter votes={votes} article_id={article_id} type="articles" />
         <CommentList article_id={article_id} />
       </div>
     );
