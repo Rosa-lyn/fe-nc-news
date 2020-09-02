@@ -50,3 +50,7 @@ export const postComment = (article_id, username, body) => {
       return res.data.comment;
     });
 };
+
+export const deleteComment = (comment_id) => {
+  return axiosInstance.delete(`/comments/${comment_id}`);
+};

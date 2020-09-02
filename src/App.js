@@ -25,7 +25,7 @@ class App extends Component {
         <Nav />
         <Router>
           <Articles path="/" />
-          <Articles path="articles/:topic" />
+          <Articles path="/:topic" />
           <User path="/users/:username" />
           <SingleArticle
             path="articles/:article_id"

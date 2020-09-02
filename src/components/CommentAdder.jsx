@@ -22,7 +22,6 @@ class CommentAdder extends Component {
   };
   postComment = (commentBody) => {
     const { article_id, currentUser, postNewComment } = this.props;
-    console.log(this.props);
     return api
       .postComment(article_id, currentUser, commentBody)
       .then((newComment) => {
@@ -39,7 +38,7 @@ class CommentAdder extends Component {
     if (isLoading) return <Loader />;
     return (
       <form onSubmit={this.handleSubmitComment}>
-        <label htmlFor="comment">Comment:</label>
+        <label htmlFor="comment">comment: </label>
         <textarea
           type="text"
           name="comment"

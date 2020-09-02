@@ -7,20 +7,30 @@ import * as api from "../utils/api";
 
 class CommentList extends Component {
   state = { comments: [], isLoading: true };
+
   componentDidMount() {
     this.getCommentsByArticleId().then((comments) => {
       this.setState({ comments, isLoading: false });
     });
   }
 
-  getCommentsByArticleId() {
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.comments !== this.state.comments) {
+      this.getCommentsByArticleId().then((comments) => {
+        this.setState({ comments });
+      });
+    }
+  }
+
+  getCommentsByArticleId = () => {
     const { article_id } = this.props;
     return api.getCommentsByArticleId(article_id);
-  }
+  };
   postNewComment = (newComment) => {
     const { comments } = this.state;
     this.setState({ comments: [newComment, ...comments] });
   };
+
   render() {
     const { comments, isLoading } = this.state;
     const { article_id, currentUser } = this.props;
@@ -35,7 +45,10 @@ class CommentList extends Component {
         {comments.map((comment) => {
           return (
             <StyledCommentList key={comment.comment_id}>
-              <CommentCard comment={comment} />
+              <CommentCard
+                comment={comment}
+                getCommentsByArticleId={this.getCommentsByArticleId}
+              />
             </StyledCommentList>
           );
         })}

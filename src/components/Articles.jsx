@@ -86,7 +86,3 @@ class Articles extends Component {
 }
 
 export default Articles;
-
-// onClick={(event) => {
-//   this.updateVote(1);
-// }
