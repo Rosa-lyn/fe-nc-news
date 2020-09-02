@@ -8,6 +8,7 @@ class Articles extends Component {
   state = {
     articles: [],
     isLoading: true,
+    sort_by: null,
   };
 
   componentDidMount() {
@@ -22,21 +23,51 @@ class Articles extends Component {
         this.setState({ articles });
       });
     }
+    if (prevState.sort_by !== this.state.sort_by) {
+      this.getArticles().then((articles) => {
+        this.setState({ articles });
+      });
+    }
   }
 
   getArticles() {
     const { topic, author } = this.props;
-    return api.getArticles(topic, author);
+    const { sort_by } = this.state;
+    return api.getArticles(topic, author, sort_by);
   }
+
+  sortBy = (sortProperty) => {
+    this.setState({ sort_by: sortProperty });
+  };
 
   render() {
     const { articles, isLoading } = this.state;
     if (isLoading) return <Loader />;
     return (
       <div>
-        <StyledButton>hot</StyledButton>
-        <StyledButton>new</StyledButton>
-        <StyledButton>talked about</StyledButton>
+        <div>
+          <StyledButton
+            onClick={() => {
+              this.sortBy("votes");
+            }}
+          >
+            loved
+          </StyledButton>
+          <StyledButton
+            onClick={() => {
+              this.sortBy("created_at");
+            }}
+          >
+            recent
+          </StyledButton>
+          <StyledButton
+            onClick={() => {
+              this.sortBy("comment_count");
+            }}
+          >
+            talked about
+          </StyledButton>
+        </div>
         <ArticleList articles={articles} />
       </div>
     );
@@ -44,3 +75,7 @@ class Articles extends Component {
 }
 
 export default Articles;
+
+// onClick={(event) => {
+//   this.updateVote(1);
+// }
