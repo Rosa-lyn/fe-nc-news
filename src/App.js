@@ -6,7 +6,7 @@ import Articles from "./components/Articles";
 import SingleArticle from "./components/SingleArticle";
 import User from "./components/User";
 import Footer from "./components/Footer";
-import { Router } from "@reach/router";
+import { Router, Link } from "@reach/router";
 
 class App extends Component {
   state = {
@@ -17,15 +17,14 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
+        <p>
+          currently logged in as:{" "}
+          <Link to={`/users/${currentUser}`}>{currentUser}</Link>
+        </p>
         <Nav />
-
         <Router>
-          {/* all articles */}
           <Articles path="/" />
-
-          {/* all articles of certain topic */}
           <Articles path="/:topic" />
-
           <User path="/users/:username" />
           <SingleArticle
             path="articles/:article_id"

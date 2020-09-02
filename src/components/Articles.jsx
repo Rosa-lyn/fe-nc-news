@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import ArticleList from "./ArticleList";
 import Loader from "./Loader";
+import ErrorPage from "./ErrorPage";
 import { StyledButton } from "../styles/navStyles";
 import * as api from "../utils/api";
 
@@ -9,12 +10,20 @@ class Articles extends Component {
     articles: [],
     isLoading: true,
     sort_by: null,
+    err: null,
   };
 
   componentDidMount() {
-    this.getArticles().then((articles) => {
-      this.setState({ articles, isLoading: false });
-    });
+    this.getArticles()
+      .then((articles) => {
+        this.setState({ articles, isLoading: false });
+      })
+      .catch(({ response }) => {
+        this.setState({
+          isLoading: false,
+          err: { msg: response.data.msg, status: response.status },
+        });
+      });
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -41,8 +50,9 @@ class Articles extends Component {
   };
 
   render() {
-    const { articles, isLoading } = this.state;
+    const { articles, isLoading, err } = this.state;
     if (isLoading) return <Loader />;
+    if (err) return <ErrorPage {...err} />;
     return (
       <div>
         <div>
@@ -68,6 +78,7 @@ class Articles extends Component {
             talked about
           </StyledButton>
         </div>
+
         <ArticleList articles={articles} />
       </div>
     );
