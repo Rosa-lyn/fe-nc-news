@@ -7,6 +7,7 @@ import SingleArticle from "./components/SingleArticle";
 import User from "./components/User";
 import Footer from "./components/Footer";
 import { Router, Link } from "@reach/router";
+import ErrorPage from "./components/ErrorPage";
 
 class App extends Component {
   state = {
@@ -24,12 +25,13 @@ class App extends Component {
         <Nav />
         <Router>
           <Articles path="/" />
-          <Articles path="/:topic" />
+          <Articles path="articles/:topic" />
           <User path="/users/:username" />
           <SingleArticle
             path="articles/:article_id"
             currentUser={currentUser}
           />
+          <ErrorPage status={404} msg={"Path not found! :("} default />
         </Router>
         <Footer />
       </div>

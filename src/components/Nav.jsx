@@ -32,7 +32,7 @@ class Nav extends Component {
           {topics.map((topic) => {
             return (
               <StyledNavListItem key={topic.slug}>
-                <Link to={`/${topic.slug}`}>{topic.slug}</Link>
+                <Link to={`articles/${topic.slug}`}>{topic.slug}</Link>
               </StyledNavListItem>
             );
           })}

@@ -3,6 +3,7 @@ import { Link } from "@reach/router";
 import CommentList from "./CommentList";
 import Loader from "./Loader";
 import Voter from "./Voter";
+import ErrorPage from "./ErrorPage";
 import { StyledArticleBody } from "../styles/singleArticleStyles";
 import * as api from "../utils/api";
 
@@ -10,12 +11,21 @@ class SingleArticle extends Component {
   state = {
     article: {},
     isLoading: true,
+    err: null,
   };
 
   componentDidMount() {
-    this.getSingleArticle().then((article) => {
-      this.setState({ article, isLoading: false });
-    });
+    this.getSingleArticle()
+      .then((article) => {
+        this.setState({ article, isLoading: false });
+      })
+      .catch(({ response }) => {
+        console.log(response);
+        this.setState({
+          isLoading: false,
+          err: { msg: response.data.msg, status: response.status },
+        });
+      });
   }
 
   getSingleArticle() {
@@ -24,10 +34,11 @@ class SingleArticle extends Component {
   }
 
   render() {
-    const { article, isLoading } = this.state;
+    const { article, isLoading, err } = this.state;
     const { article_id, currentUser } = this.props;
     const { votes } = this.state.article;
     if (isLoading) return <Loader />;
+    if (err) return <ErrorPage {...err} />;
     return (
       <div>
         <h2>{article.title}</h2>
