@@ -47,3 +47,34 @@ Here's a guide to approaching any React project. It's not an absolutely strict s
 - [ ] Create and .css files
 - [ ] Write application CSS - sitewide styling choices like fonts, colour pallettes
 - [ ] Write component specific CSS
+
+## User Stories
+
+### As a user, I should be able to...
+
+- [x] view a list of all articles
+- [x] view a page for each topic with a list of related articles.
+- [x] view an individual article.
+- [x] view an individual article's comments.
+- [x] sort articles by:
+  - [x] date created
+  - [x] comment_count
+  - [x] votes
+- [ ] post a new comment to an existing article (as a default logged in user. e.g. 'jessjelly').
+- [ ] delete my own comments (as a default logged in user. e.g. 'jessjelly').
+- [x] vote on an article and immediately see the change.
+- [x] vote on a comment and immediately see the change.
+
+### Error-handling: As a user, I should...
+
+- [ ] see a 404 error if I go on a non-existent path/a path for a non-existent article/topic.
+- [ ] see a 400 error if I go on a invalid article ID.
+- [ ] not be allowed to post a comment if I have not filled in all of the form boxes.
+
+### As a hiring partner, I should be able to...
+
+- [ ] use the site on my mobile without sacrificing style or functionality (as I may not have my laptop nearby).
+- [ ] follow the readme instructions to easily run the project locally.
+- [ ] find a link to the hosted version of the project in the readme. (use a placeholder if not yet hosted!)
+- [ ] find a link to the back-end repository of the project in the readme.
+- [ ] find a link to the hosted version of the back-end project in the readme.
