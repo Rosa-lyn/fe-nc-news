@@ -39,3 +39,14 @@ export const getCommentsByArticleId = (article_id) => {
 export const patchVotes = (id, inc_votes, type) => {
   return axiosInstance.patch(`/${type}/${id}`, { inc_votes });
 };
+
+export const postComment = (article_id, username, body) => {
+  return axiosInstance
+    .post(`/articles/${article_id}/comments`, {
+      username,
+      body,
+    })
+    .then((res) => {
+      return res.data.comment;
+    });
+};

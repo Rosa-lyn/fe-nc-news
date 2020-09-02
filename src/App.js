@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import "./App.css";
 import Header from "./components/Header";
 import Nav from "./components/Nav";
@@ -8,25 +8,34 @@ import User from "./components/User";
 import Footer from "./components/Footer";
 import { Router } from "@reach/router";
 
-function App() {
-  return (
-    <div className="App">
-      <Header />
-      <Nav />
+class App extends Component {
+  state = {
+    currentUser: "jessjelly",
+  };
+  render() {
+    const { currentUser } = this.state;
+    return (
+      <div className="App">
+        <Header />
+        <Nav />
 
-      <Router>
-        {/* all articles */}
-        <Articles path="/" />
+        <Router>
+          {/* all articles */}
+          <Articles path="/" />
 
-        {/* all articles of certain topic */}
-        <Articles path="/:topic" />
+          {/* all articles of certain topic */}
+          <Articles path="/:topic" />
 
-        <User path="/users/:username" />
-        <SingleArticle path="articles/:article_id" />
-      </Router>
-      <Footer />
-    </div>
-  );
+          <User path="/users/:username" />
+          <SingleArticle
+            path="articles/:article_id"
+            currentUser={currentUser}
+          />
+        </Router>
+        <Footer />
+      </div>
+    );
+  }
 }
 
 export default App;

@@ -25,7 +25,7 @@ class SingleArticle extends Component {
 
   render() {
     const { article, isLoading } = this.state;
-    const { article_id } = this.props;
+    const { article_id, currentUser } = this.props;
     const { votes } = this.state.article;
     if (isLoading) return <Loader />;
     return (
@@ -37,7 +37,8 @@ class SingleArticle extends Component {
         </p>
         <StyledArticleBody>{article.body}</StyledArticleBody>
         <Voter votes={votes} id={article_id} type="articles" />
-        <CommentList article_id={article_id} />
+
+        <CommentList article_id={article_id} currentUser={currentUser} />
       </div>
     );
   }
