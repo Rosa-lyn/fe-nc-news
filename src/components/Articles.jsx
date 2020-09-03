@@ -2,7 +2,10 @@ import React, { Component } from "react";
 import ArticleList from "./ArticleList";
 import Loader from "./Loader";
 import ErrorPage from "./ErrorPage";
-import { StyledButton } from "../styles/navStyles";
+import {
+  StyledFilterButton,
+  StyledFilterSection,
+} from "../styles/filterButtonStyles";
 import * as api from "../utils/api";
 
 class Articles extends Component {
@@ -55,29 +58,29 @@ class Articles extends Component {
     if (err) return <ErrorPage {...err} />;
     return (
       <div>
-        <div>
-          <StyledButton
+        <StyledFilterSection>
+          <StyledFilterButton
             onClick={() => {
               this.sortBy("votes");
             }}
           >
-            loved
-          </StyledButton>
-          <StyledButton
+            most loved
+          </StyledFilterButton>
+          <StyledFilterButton
             onClick={() => {
               this.sortBy("created_at");
             }}
           >
-            recent
-          </StyledButton>
-          <StyledButton
+            most recent
+          </StyledFilterButton>
+          <StyledFilterButton
             onClick={() => {
               this.sortBy("comment_count");
             }}
           >
-            talked about
-          </StyledButton>
-        </div>
+            most talked about
+          </StyledFilterButton>
+        </StyledFilterSection>
 
         <ArticleList articles={articles} />
       </div>

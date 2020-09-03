@@ -1,6 +1,9 @@
 import styled from "styled-components";
 
-export const StyledCommentCard = styled.div`
+export const StyledCommentCard = styled.section`
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
   width: 60vw;
   background-color: #f2c32c;
   margin: 10px;
@@ -9,6 +12,7 @@ export const StyledCommentCard = styled.div`
 `;
 
 export const StyledDeleteButton = styled.button`
+  font-family: "Quicksand", sans-serif;
   background-color: #f2c32c;
   color: black;
   border: white 1px solid;

@@ -9,9 +9,6 @@ import Login from "./components/Login";
 import ErrorPage from "./components/ErrorPage";
 import Footer from "./components/Footer";
 import { Router } from "@reach/router";
-import { SmallerTextP } from "./styles/fontSizes";
-import { StyledWelcomeSection } from "./styles/welcomeStyles";
-import { StyledUserLink } from "./styles/linkStyles";
 
 class App extends Component {
   state = {
@@ -24,16 +21,7 @@ class App extends Component {
     const { currentUser } = this.state;
     return (
       <div className="App">
-        <Header />
-        <StyledWelcomeSection>
-          Welcome{" "}
-          <StyledUserLink to={`/users/${currentUser}`}>
-            {currentUser}
-          </StyledUserLink>{" "}
-          <StyledUserLink to={"/login"}>
-            <SmallerTextP>not you?</SmallerTextP>
-          </StyledUserLink>
-        </StyledWelcomeSection>
+        <Header currentUser={currentUser} />
         <Nav />
         <Router>
           <Articles path="/" />

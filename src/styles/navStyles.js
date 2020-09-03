@@ -1,19 +1,17 @@
 import styled from "styled-components";
 
 export const StyledNavList = styled.ul`
+  background-color: #f5f5f5;
+  /* background-color: #f2c32c; */
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   list-style-type: none;
-  padding: 0px;
+  padding: 10px;
   margin: 0;
   text-align: center;
 `;
 
 export const StyledNavListItem = styled.li`
-  padding: 10px;
-`;
-
-export const StyledButton = styled.button`
-  padding: 5px;
-  margin: 10px;
+  /* padding: 10px; */
 `;

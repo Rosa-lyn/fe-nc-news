@@ -2,3 +2,8 @@
   font-family: "Quicksand", sans-serif;
   text-align: center;
 }
+.active {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}

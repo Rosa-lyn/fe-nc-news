@@ -1,9 +1,11 @@
 import styled from "styled-components";
 
-export const StyledArticleCard = styled.div`
+export const StyledArticleCard = styled.section`
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
   width: 60vw;
-  border: solid black 1px;
-  margin: 20px;
-  border-radius: 10px;
+  background-color: #f2c32c;
+  margin: 10px;
   padding: 10px;
 `;
