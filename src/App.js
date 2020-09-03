@@ -8,7 +8,10 @@ import SingleArticle from "./components/SingleArticle";
 import Login from "./components/Login";
 import ErrorPage from "./components/ErrorPage";
 import Footer from "./components/Footer";
-import { Router, Link } from "@reach/router";
+import { Router } from "@reach/router";
+import { SmallerTextP } from "./styles/fontSizes";
+import { StyledWelcomeSection } from "./styles/welcomeStyles";
+import { StyledUserLink } from "./styles/linkStyles";
 
 class App extends Component {
   state = {
@@ -22,13 +25,15 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        <p>
-          currently logged in as:{" "}
-          <Link to={`/users/${currentUser}`}>{currentUser}</Link>{" "}
-        </p>
-        <p>
-          <Link to={"/login"}>not you?</Link>
-        </p>
+        <StyledWelcomeSection>
+          Welcome{" "}
+          <StyledUserLink to={`/users/${currentUser}`}>
+            {currentUser}
+          </StyledUserLink>{" "}
+          <StyledUserLink to={"/login"}>
+            <SmallerTextP>not you?</SmallerTextP>
+          </StyledUserLink>
+        </StyledWelcomeSection>
         <Nav />
         <Router>
           <Articles path="/" />

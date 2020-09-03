@@ -1,9 +1,13 @@
 import React from "react";
-import { Link } from "@reach/router";
 import moment from "moment";
 import Voter from "./Voter";
 import Deleter from "./Deleter";
-import { StyledCommentCard } from "../styles/commentCardStyles";
+import {
+  StyledCommentCard,
+  StyledButtonsLayout,
+} from "../styles/commentCardStyles";
+import { SmallerTextP } from "../styles/fontSizes";
+import { StyledUserLink } from "../styles/linkStyles";
 
 function CommentCard(props) {
   const { getCommentsByArticleId, article_id, currentUser } = props;
@@ -11,19 +15,23 @@ function CommentCard(props) {
   return (
     <StyledCommentCard>
       <p>{body}</p>
-      <p>
-        <Link to={`/users/${author}`}>{author}</Link> at{" "}
-        {moment(created_at).format("h:mm a")} on{" "}
+      <SmallerTextP>
+        <StyledUserLink to={`/users/${author}`}>{author}</StyledUserLink>
+      </SmallerTextP>
+      <SmallerTextP>
+        at {moment(created_at).format("h:mm a")} on{" "}
         {moment(created_at).format("ddd Do MMM YYYY")}
-      </p>
-      <Voter votes={votes} id={comment_id} type="comments" />
-      {currentUser === author && (
-        <Deleter
-          comment_id={comment_id}
-          getCommentsByArticleId={getCommentsByArticleId}
-          article_id={article_id}
-        />
-      )}
+      </SmallerTextP>
+      <StyledButtonsLayout>
+        <Voter votes={votes} id={comment_id} type="comments" />
+        {currentUser === author && (
+          <Deleter
+            comment_id={comment_id}
+            getCommentsByArticleId={getCommentsByArticleId}
+            article_id={article_id}
+          />
+        )}
+      </StyledButtonsLayout>
     </StyledCommentCard>
   );
 }

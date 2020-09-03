@@ -5,6 +5,6 @@ export const StyledCommentList = styled.ul`
   flex-direction: column;
   align-items: center;
   padding: 0;
-  margin: 0;
+  margin: 10px;
   list-style-type: none;
 `;

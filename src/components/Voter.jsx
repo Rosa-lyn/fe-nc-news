@@ -29,9 +29,11 @@ class Voter extends Component {
           }}
           disabled={optimisticVotes === 1}
         >
-          <span role="img" aria-label="thumbs-up">
-            👍
-          </span>
+          <span
+            className="fas fa-arrow-up"
+            role="img"
+            aria-label="upvote"
+          ></span>
         </StyledVoteButton>
         {votes + optimisticVotes}
         <StyledVoteButton
@@ -40,9 +42,11 @@ class Voter extends Component {
           }}
           disabled={optimisticVotes === -1}
         >
-          <span role="img" aria-label="thumbs-down">
-            👎
-          </span>
+          <span
+            className="fas fa-arrow-down"
+            role="img"
+            aria-label="downvote"
+          ></span>
         </StyledVoteButton>
       </div>
     );

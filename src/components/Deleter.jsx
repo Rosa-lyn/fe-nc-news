@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Loader from "./Loader";
 import * as api from "../utils/api";
+import { StyledDeleteButton } from "../styles/commentCardStyles";
 
 class Deleter extends Component {
   state = {
@@ -20,7 +21,11 @@ class Deleter extends Component {
   render() {
     const { isLoading } = this.state;
     if (isLoading) return <Loader />;
-    return <button onClick={this.handleDeleteComment}>delete</button>;
+    return (
+      <StyledDeleteButton onClick={this.handleDeleteComment}>
+        delete
+      </StyledDeleteButton>
+    );
   }
 }
 
