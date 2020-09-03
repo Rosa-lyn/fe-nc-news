@@ -1,10 +1,9 @@
 import React from "react";
 import { Link } from "@reach/router";
-import Voter from "./Voter";
 import { StyledArticleCard } from "../styles/articleCardStyles";
 
 function ArticleCard(props) {
-  const { article_id, title, author, comment_count, votes } = props;
+  const { article_id, title, author, comment_count } = props;
   return (
     <StyledArticleCard>
       <h3>
@@ -17,9 +16,8 @@ function ArticleCard(props) {
         <span role="img" aria-label="speech-balloon">
           💬
         </span>{" "}
-        : {comment_count}
+        comments: {comment_count}
       </p>
-      <Voter votes={votes} id={article_id} type="articles" />
     </StyledArticleCard>
   );
 }
