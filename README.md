@@ -45,7 +45,7 @@ In the project directory, run `yarn start` or `npm start` to run the app in deve
 ## Built with
 
 - JavaScript
-- [React]() - JavaScript UI library
+- [React](https://reactjs.org/) - JavaScript UI library
 - [Axios](https://github.com/axios/axios) - HTTP client
 - [Moment](https://momentjs.com/) - Date formatting
 - [Styled Components](https://styled-components.com/) - Styling
