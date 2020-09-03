@@ -3,7 +3,7 @@ import { Link } from "@reach/router";
 import { StyledArticleCard } from "../styles/articleCardStyles";
 
 function ArticleCard(props) {
-  const { article_id, title, author, comment_count } = props;
+  const { article_id, title, author, comment_count, votes } = props;
   return (
     <StyledArticleCard>
       <h3>
@@ -17,6 +17,12 @@ function ArticleCard(props) {
           💬
         </span>{" "}
         comments: {comment_count}
+      </p>
+      <p>
+        <span role="img" aria-label="thumbs-up">
+          👍
+        </span>{" "}
+        votes: {votes}
       </p>
     </StyledArticleCard>
   );

@@ -11,6 +11,7 @@ function ArticleList({ articles }) {
             <ArticleCard
               title={article.title}
               author={article.author}
+              votes={article.votes}
               comment_count={article.comment_count}
               article_id={article.article_id}
             />
