@@ -18,7 +18,6 @@ class User extends Component {
         this.setState({ user, isLoading: false });
       })
       .catch(({ response }) => {
-        console.log(response);
         this.setState({
           isLoading: false,
           err: { msg: response.data.msg, status: response.status },

@@ -5,8 +5,6 @@ const ErrorPage = (props) => {
   return (
     <div>
       <p>Sorry! {msg}</p>
-      {/* {msg === "Topic not found :(" && <p>Sorry, we can't find that topic!</p>}
-      {msg === "User not found :(" && <p>Sorry, we can't find that user!</p>} */}
       <img
         src="https://media.giphy.com/media/KDRv3QggAjyo/giphy.gif"
         alt="Tobey Maguire crying GIF"
