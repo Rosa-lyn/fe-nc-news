@@ -1,6 +1,6 @@
 # The News Den
 
-A social news aggregation site, similar to [Reddit](https://www.reddit.com/), which I created with [React](https://reactjs.org/). Here's a link to the live site: [coming soon!]
+A social news aggregation site, similar to [Reddit](https://www.reddit.com/), which I created with [React](https://reactjs.org/). You can see the live site [here](https://thenewsden.netlify.app/).
 
 Users are presented with a list of all articles on arrival to the site, which can be filtered by topic, and sorted by date, the number of 'upvotes', or the number of comments. Visitors are automatically logged-in as user 'jessjelly', but they can change user to have different permissions.
 
