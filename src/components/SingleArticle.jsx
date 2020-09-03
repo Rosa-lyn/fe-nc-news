@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "@reach/router";
+import moment from "moment";
 import CommentList from "./CommentList";
 import Loader from "./Loader";
 import Voter from "./Voter";
@@ -42,7 +43,7 @@ class SingleArticle extends Component {
     return (
       <div>
         <h2>{article.title}</h2>
-        <p>{article.created_at}</p>
+        <p>{moment(article.created_at).format("dddd Do MMMM YYYY")}</p>
         <p>
           author: <Link to={`/users/${article.author}`}>{article.author}</Link>
         </p>
