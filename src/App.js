@@ -37,7 +37,7 @@ class App extends Component {
         <Nav />
         <Router>
           <Articles path="/" />
-          <Articles path="/:topic" />
+          <Articles path="/articles/topics/:topic" />
           <User path="/users/:username" />
           <SingleArticle
             path="/articles/:article_id"
