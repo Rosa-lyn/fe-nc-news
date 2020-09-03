@@ -1,29 +1,36 @@
 import React from "react";
-import { Link } from "@reach/router";
-import { StyledArticleCard } from "../styles/articleCardStyles";
+import { StyledArticleCard, NoMarginP } from "../styles/articleCardStyles";
+import { StyledUserLink, StyledTitleLink } from "../styles/linkStyles";
 
 function ArticleCard(props) {
   const { article_id, title, author, comment_count, votes } = props;
   return (
     <StyledArticleCard>
       <h3>
-        <Link to={`/articles/${article_id}`}>{title}</Link>
+        <StyledTitleLink to={`/articles/${article_id}`}>
+          {title}
+        </StyledTitleLink>
       </h3>
-      <p>
-        author: <Link to={`/users/${author}`}>{author}</Link>
-      </p>
-      <p>
-        <span role="img" aria-label="speech-balloon">
-          💬
-        </span>{" "}
-        comments: {comment_count}
-      </p>
-      <p>
-        <span role="img" aria-label="thumbs-up">
-          👍
-        </span>{" "}
-        votes: {votes}
-      </p>
+      <NoMarginP>
+        author:{" "}
+        <StyledUserLink to={`/users/${author}`}>{author}</StyledUserLink>
+      </NoMarginP>
+      <NoMarginP>
+        <span
+          className="far fa-comments"
+          role="img"
+          aria-label="comments"
+        ></span>{" "}
+        {comment_count}{" "}
+      </NoMarginP>
+      <NoMarginP>
+        <span
+          className="fas fa-arrow-up"
+          role="img"
+          aria-label="upvotes"
+        ></span>{" "}
+        {votes}
+      </NoMarginP>
     </StyledArticleCard>
   );
 }

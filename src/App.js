@@ -9,6 +9,7 @@ import Login from "./components/Login";
 import ErrorPage from "./components/ErrorPage";
 import Footer from "./components/Footer";
 import { Router } from "@reach/router";
+import { ContentWrap } from "./styles/contentWrap";
 
 class App extends Component {
   state = {
@@ -21,19 +22,21 @@ class App extends Component {
     const { currentUser } = this.state;
     return (
       <div className="App">
-        <Header currentUser={currentUser} />
-        <Nav />
-        <Router>
-          <Articles path="/" />
-          <Articles path="/articles/topics/:topic" />
-          <User path="/users/:username" />
-          <SingleArticle
-            path="/articles/:article_id"
-            currentUser={currentUser}
-          />
-          <Login path="/login" changeUser={this.changeUser} />
-          <ErrorPage status={404} msg={"Path not found! :("} default />
-        </Router>
+        <ContentWrap>
+          <Header currentUser={currentUser} />
+          <Nav />
+          <Router>
+            <Articles path="/" />
+            <Articles path="/articles/topics/:topic" />
+            <User path="/users/:username" />
+            <SingleArticle
+              path="/articles/:article_id"
+              currentUser={currentUser}
+            />
+            <Login path="/login" changeUser={this.changeUser} />
+            <ErrorPage status={404} msg={"Path not found! :("} default />
+          </Router>
+        </ContentWrap>
         <Footer />
       </div>
     );

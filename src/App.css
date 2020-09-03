@@ -1,6 +1,8 @@
 .App {
   font-family: "Quicksand", sans-serif;
   text-align: center;
+  position: relative;
+  min-height: 100vh;
 }
 .active {
   text-decoration: none;
