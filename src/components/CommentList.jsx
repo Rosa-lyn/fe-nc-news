@@ -48,6 +48,7 @@ class CommentList extends Component {
               <CommentCard
                 comment={comment}
                 getCommentsByArticleId={this.getCommentsByArticleId}
+                currentUser={currentUser}
               />
             </StyledCommentList>
           );
