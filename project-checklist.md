@@ -44,9 +44,9 @@ Here's a guide to approaching any React project. It's not an absolutely strict s
 ## Style
 
 - [ ] Add classNames
-- [ ] Create any .css files
+- [x] Create any .css files
 - [ ] Write application CSS - sitewide styling choices like fonts, colour pallettes
-- [ ] Write component specific CSS
+- [x] Write component specific CSS
 
 ## User Stories
 
@@ -61,7 +61,7 @@ Here's a guide to approaching any React project. It's not an absolutely strict s
   - [x] comment_count
   - [x] votes
 - [x] post a new comment to an existing article (as a default logged in user. e.g. 'jessjelly').
-- [ ] delete my own comments (as a default logged in user. e.g. 'jessjelly').
+- [x] delete my own comments (as a default logged in user. e.g. 'jessjelly').
 - [x] vote on an article and immediately see the change.
 - [x] vote on a comment and immediately see the change.
 
@@ -73,8 +73,8 @@ Here's a guide to approaching any React project. It's not an absolutely strict s
 
 ### As a hiring partner, I should be able to...
 
-- [ ] use the site on my mobile without sacrificing style or functionality (as I may not have my laptop nearby).
-- [ ] follow the readme instructions to easily run the project locally.
-- [ ] find a link to the hosted version of the project in the readme. (use a placeholder if not yet hosted!)
-- [ ] find a link to the back-end repository of the project in the readme.
-- [ ] find a link to the hosted version of the back-end project in the readme.
+- [x] use the site on my mobile without sacrificing style or functionality (as I may not have my laptop nearby).
+- [x] follow the readme instructions to easily run the project locally.
+- [x] find a link to the hosted version of the project in the readme. (use a placeholder if not yet hosted!)
+- [x] find a link to the back-end repository of the project in the readme.
+- [x] find a link to the hosted version of the back-end project in the readme.

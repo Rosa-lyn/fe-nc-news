@@ -1,68 +1,60 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# The News Den
 
-## Available Scripts
+A social news aggregation site, similar to [Reddit](https://www.reddit.com/), which I created with [React](https://reactjs.org/). Here's a link to the live site: [coming soon!]
 
-In the project directory, you can run:
+Users are presented with a list of all articles on arrival to the site, which can be filtered by topic, and sorted by date, the number of 'upvotes', or the number of comments. Visitors are automatically logged-in as user 'jessjelly', but they can change user to have different permissions.
 
-### `yarn start`
+Users can read a full article and its comments, and vote on it. They can post new comments and delete their own comments as a logged-in user.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+I used my own server as a back-end to add the data to the site. You can see the code for the back-end [here](https://github.com/Rosa-lyn/be-nc-news) and the live site [here](https://thenewsden.herokuapp.com/api).
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## Getting Started
 
-### `yarn test`
+To get a copy of this project onto your own machine, fork the repo, then clone it into your local directory:
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```
+git clone <URL-of-your-forked-repo>
+```
 
-### `yarn build`
+### Installing
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+To install all the necessary dependencies, run `npm i`. This will install:
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+```
+Axios v0.20.0
+Moment v2.27.0
+Reach Router v1.3.4
+React v16.13.1
+React DOM v16.13.1
+React Scripts v3.4.3
+Styled Components v5.1.1
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+and the following testing dependencies:
 
-### `yarn eject`
+```
+Jest DOM Testing Library v4.2.4
+React Testing Library v9.3.2
+User Event Testing Library v7.1.2
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Previewing the App
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+In the project directory, run `yarn start` or `npm start` to run the app in development mode. To see the app in the browser, open http://localhost:3000.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Built with
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- JavaScript
+- [React]() - JavaScript UI library
+- [Axios](https://github.com/axios/axios) - HTTP client
+- [Moment](https://momentjs.com/) - Date formatting
+- [Styled Components](https://styled-components.com/) - Styling
+- [Netlify](https://www.netlify.com/) - Hosting
 
-## Learn More
+## Author
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Rosalyn Land | [Portfolio](https://rosa-lyn.github.io/) | [GitHub](https://github.com/Rosa-lyn) | [LinkedIn](https://linkedin.com/in/rosalynland)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Acknowledgements
 
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+A big thank you to [Northcoders](https://github.com/northcoders) for providing the data for this project and to the Northcoders tutors for all their help and support.
