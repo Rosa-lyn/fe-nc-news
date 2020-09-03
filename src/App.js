@@ -35,7 +35,7 @@ class App extends Component {
           <Articles path="/:topic" />
           <User path="/users/:username" />
           <SingleArticle
-            path="articles/:article_id"
+            path="/articles/:article_id"
             currentUser={currentUser}
           />
           <Login path="/login" changeUser={this.changeUser} />

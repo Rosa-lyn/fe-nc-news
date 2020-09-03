@@ -19,6 +19,7 @@ class SingleArticle extends Component {
     this.getSingleArticle()
       .then((article) => {
         this.setState({ article, isLoading: false });
+        // console.log(this.state);
       })
       .catch(({ response }) => {
         console.log(response);
@@ -29,10 +30,10 @@ class SingleArticle extends Component {
       });
   }
 
-  getSingleArticle() {
+  getSingleArticle = () => {
     const { article_id } = this.props;
     return api.getSingleArticle(article_id);
-  }
+  };
 
   render() {
     const { article, isLoading, err } = this.state;
