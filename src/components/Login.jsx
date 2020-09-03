@@ -1,8 +1,10 @@
 import React, { Component } from "react";
-import { Redirect } from "@reach/router";
+import { navigate } from "@reach/router";
 
 class Login extends Component {
-  state = { user: "", userChosen: false };
+  state = {
+    user: "",
+  };
   handleUserChange = (event) => {
     const user = event.target.value;
     this.setState({ user });
@@ -12,11 +14,9 @@ class Login extends Component {
     const { user } = this.state;
     const { changeUser } = this.props;
     changeUser(user);
-    this.setState({ userChosen: true });
+    navigate("/");
   };
   render() {
-    const { userChosen } = this.state;
-    if (userChosen) return <Redirect from="/login" to="/" />;
     return (
       <div>
         <form action="" onSubmit={this.handleLoginSubmit}>
