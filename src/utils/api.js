@@ -4,11 +4,11 @@ const axiosInstance = axios.create({
   baseURL: "https://thenewsden.herokuapp.com/api",
 });
 
-export const getArticles = (topic, author, sort_by) => {
+export const getArticles = (topic, author, sort_by, p) => {
   return axiosInstance
-    .get("/articles", { params: { topic, author, sort_by } })
+    .get("/articles", { params: { topic, author, sort_by, p } })
     .then((res) => {
-      return res.data.articles;
+      return res.data;
     });
 };
 

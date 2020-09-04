@@ -2,7 +2,8 @@ import React from "react";
 import ArticleCard from "./ArticleCard";
 import { StyledArticleList } from "../styles/articleListStyles";
 
-function ArticleList({ articles }) {
+function ArticleList(props) {
+  const { articles } = props;
   return (
     <StyledArticleList>
       {articles.map((article) => {
