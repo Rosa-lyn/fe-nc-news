@@ -14,14 +14,6 @@ class CommentList extends Component {
     });
   }
 
-  componentDidUpdate(prevProps, prevState) {
-    if (prevState.comments.length !== this.state.comments.length) {
-      this.getCommentsByArticleId().then((comments) => {
-        this.setState({ comments });
-      });
-    }
-  }
-
   getCommentsByArticleId = () => {
     const { article_id } = this.props;
     return api.getCommentsByArticleId(article_id);

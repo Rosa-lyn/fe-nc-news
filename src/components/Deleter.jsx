@@ -13,9 +13,9 @@ class Deleter extends Component {
   }
 
   handleDeleteComment = () => {
-    const { comment_id, getCommentsByArticleId, article_id } = this.props;
+    const { comment_id, deleteComment } = this.props;
     return api.deleteComment(comment_id).then(() => {
-      getCommentsByArticleId(article_id);
+      return deleteComment();
     });
   };
   render() {

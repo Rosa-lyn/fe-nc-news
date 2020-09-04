@@ -54,7 +54,7 @@ class CommentAdder extends Component {
             rows={6}
           />
         </label>
-        {isPosting && <p>"Your comment is being posted..."</p>}
+        {isPosting && <p>Your comment is being posted...</p>}
         <StyledCommentFormSubmitButton
           type="submit"
           value="Submit"
