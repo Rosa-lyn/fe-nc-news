@@ -9,3 +9,12 @@
   color: black;
   font-weight: bold;
 }
+a:link,
+a:visited,
+a:active {
+  text-decoration: underline dotted;
+  color: black;
+}
+a:hover {
+  color: #8648ea;
+}

@@ -1,10 +1,13 @@
 import React from "react";
-import { StyledFooter } from "../styles/footerStyles";
+import { StyledFooter, StyledFooterP } from "../styles/footerStyles";
 
 function Footer() {
   return (
     <StyledFooter>
-      <p>&copy; 2020 Rosalyn Land</p>
+      <StyledFooterP>
+        Created by <a href="https://rosa-lyn.github.io/">Rosalyn Land</a>
+        <br></br> at <a href="https://northcoders.com/">Northcoders</a> bootcamp
+      </StyledFooterP>
     </StyledFooter>
   );
 }
