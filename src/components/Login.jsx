@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { navigate } from "@reach/router";
+import { StyledLoginForm, StyledLoginButton } from "../styles/loginStyles";
 
 class Login extends Component {
   state = {
@@ -19,8 +20,8 @@ class Login extends Component {
   render() {
     return (
       <div>
-        <form action="" onSubmit={this.handleLoginSubmit}>
-          <label htmlFor="users">Choose a user to log in as:</label>
+        <StyledLoginForm action="" onSubmit={this.handleLoginSubmit}>
+          <label htmlFor="users">Choose a user:</label>
           <select name="users" id="users" onChange={this.handleUserChange}>
             <option value="null"></option>
             <option value="tickle122">tickle122</option>
@@ -30,8 +31,8 @@ class Login extends Component {
             <option value="weegembump">weegembump</option>
             <option value="jessjelly">jessjelly</option>
           </select>
-          <input type="submit" value="Login" />
-        </form>
+          <StyledLoginButton type="submit" value="Login" />
+        </StyledLoginForm>
       </div>
     );
   }

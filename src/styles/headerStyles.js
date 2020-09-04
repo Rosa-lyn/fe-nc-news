@@ -2,7 +2,8 @@ import styled from "styled-components";
 
 export const StyledHeader = styled.header`
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: center;
   flex-wrap: wrap;
   background-color: #f2c32c;
   padding: 0px;
@@ -18,6 +19,4 @@ export const StyledLogo = styled.img`
 
 export const StyledWelcomeSection = styled.section`
   margin: 15px;
-  text-align: right;
-  align-self: flex-end;
 `;
