@@ -9,12 +9,12 @@
   color: black;
   font-weight: bold;
 }
-a:link,
-a:visited,
-a:active {
+.footerLink:link,
+.footerLink:visited,
+.footerLink:active {
   text-decoration: underline dotted;
   color: black;
 }
-a:hover {
+.footerLink:hover {
   color: #8648ea;
 }

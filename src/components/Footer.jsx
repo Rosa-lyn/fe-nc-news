@@ -5,8 +5,15 @@ function Footer() {
   return (
     <StyledFooter>
       <StyledFooterP>
-        Created by <a href="https://rosa-lyn.github.io/">Rosalyn Land</a>
-        <br></br> at <a href="https://northcoders.com/">Northcoders</a> bootcamp
+        Created by{" "}
+        <a className="footerLink" href="https://rosa-lyn.github.io/">
+          Rosalyn Land
+        </a>
+        <br></br> at{" "}
+        <a className="footerLink" href="https://northcoders.com/">
+          Northcoders
+        </a>{" "}
+        bootcamp
       </StyledFooterP>
     </StyledFooter>
   );

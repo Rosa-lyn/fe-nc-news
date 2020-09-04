@@ -5,7 +5,12 @@ import CommentList from "./CommentList";
 import Loader from "./Loader";
 import Voter from "./Voter";
 import ErrorPage from "./ErrorPage";
-import { StyledArticleBody } from "../styles/singleArticleStyles";
+import {
+  StyledArticleTitle,
+  StyledArticleDate,
+  StyledArticleAuthor,
+  StyledArticleBody,
+} from "../styles/singleArticleStyles";
 import * as api from "../utils/api";
 
 class SingleArticle extends Component {
@@ -40,17 +45,21 @@ class SingleArticle extends Component {
     if (isLoading) return <Loader />;
     if (err) return <ErrorPage {...err} />;
     return (
-      <div>
-        <h2>{article.title}</h2>
-        <p>{moment(article.created_at).format("dddd Do MMMM YYYY")}</p>
-        <p>
-          author: <Link to={`/users/${article.author}`}>{article.author}</Link>
-        </p>
-        <StyledArticleBody>{article.body}</StyledArticleBody>
-        <Voter votes={votes} id={article_id} type="articles" />
-
+      <section>
+        <article>
+          <StyledArticleTitle>{article.title}</StyledArticleTitle>
+          <StyledArticleDate>
+            {moment(article.created_at).format("dddd Do MMMM YYYY")}
+          </StyledArticleDate>
+          <StyledArticleAuthor>
+            author:{" "}
+            <Link to={`/users/${article.author}`}>{article.author}</Link>
+          </StyledArticleAuthor>
+          <StyledArticleBody>{article.body}</StyledArticleBody>
+          <Voter votes={votes} id={article_id} type="articles" />
+        </article>
         <CommentList article_id={article_id} currentUser={currentUser} />
-      </div>
+      </section>
     );
   }
 }

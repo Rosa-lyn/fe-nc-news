@@ -1,6 +1,10 @@
 import React, { Component } from "react";
 import Loader from "./Loader";
 import * as api from "../utils/api";
+import {
+  StyledCommentForm,
+  StyledCommentFormSubmitButton,
+} from "../styles/commentAdderStyles";
 
 class CommentAdder extends Component {
   state = {
@@ -37,21 +41,26 @@ class CommentAdder extends Component {
     const { isLoading, isPosting, commentBody } = this.state;
     if (isLoading) return <Loader />;
     return (
-      <form onSubmit={this.handleSubmitComment}>
-        <label htmlFor="comment">comment: </label>
-        <textarea
-          type="text"
-          name="comment"
-          id="comment"
-          value={commentBody}
-          onChange={this.getCommentBody}
-          placeholder="leave a comment..."
-          required
-          rows={6}
-        />
+      <StyledCommentForm onSubmit={this.handleSubmitComment}>
+        <label htmlFor="comment">
+          <textarea
+            type="text"
+            name="comment"
+            id="comment"
+            value={commentBody}
+            onChange={this.getCommentBody}
+            placeholder="leave a comment..."
+            required
+            rows={6}
+          />
+        </label>
         {isPosting && <p>"Your comment is being posted..."</p>}
-        <input type="submit" value="Submit" disabled={isPosting === true} />
-      </form>
+        <StyledCommentFormSubmitButton
+          type="submit"
+          value="Submit"
+          disabled={isPosting === true}
+        />
+      </StyledCommentForm>
     );
   }
 }
