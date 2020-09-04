@@ -28,6 +28,7 @@ class CommentCard extends Component {
           <StyledCommentCard>
             <p>{body}</p>
             <SmallerTextP>
+              by{" "}
               <StyledUserLink to={`/users/${author}`}>{author}</StyledUserLink>
             </SmallerTextP>
             <SmallerTextP>

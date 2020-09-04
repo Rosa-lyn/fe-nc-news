@@ -52,8 +52,7 @@ class SingleArticle extends Component {
             {moment(article.created_at).format("dddd Do MMMM YYYY")}
           </StyledArticleDate>
           <StyledArticleAuthor>
-            author:{" "}
-            <Link to={`/users/${article.author}`}>{article.author}</Link>
+            by <Link to={`/users/${article.author}`}>{article.author}</Link>
           </StyledArticleAuthor>
           <StyledArticleBody>{article.body}</StyledArticleBody>
           <Voter votes={votes} id={article_id} type="articles" />

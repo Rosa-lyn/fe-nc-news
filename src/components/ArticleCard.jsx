@@ -12,8 +12,7 @@ function ArticleCard(props) {
         </StyledTitleLink>
       </h3>
       <NoMarginP>
-        author:{" "}
-        <StyledUserLink to={`/users/${author}`}>{author}</StyledUserLink>
+        by <StyledUserLink to={`/users/${author}`}>{author}</StyledUserLink>
       </NoMarginP>
       <NoMarginP>
         <span
@@ -21,7 +20,7 @@ function ArticleCard(props) {
           role="img"
           aria-label="comments"
         ></span>{" "}
-        {comment_count}{" "}
+        {comment_count} comments
       </NoMarginP>
       <NoMarginP>
         <span
@@ -29,7 +28,7 @@ function ArticleCard(props) {
           role="img"
           aria-label="upvotes"
         ></span>{" "}
-        {votes}
+        {votes} upvotes
       </NoMarginP>
     </StyledArticleCard>
   );
