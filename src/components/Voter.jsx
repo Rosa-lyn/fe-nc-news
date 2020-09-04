@@ -22,7 +22,7 @@ class Voter extends Component {
     const { votes } = this.props;
     const { optimisticVotes } = this.state;
     return (
-      <div>
+      <section>
         <StyledVoteButton
           onClick={(event) => {
             this.updateVote(1);
@@ -48,7 +48,7 @@ class Voter extends Component {
             aria-label="downvote"
           ></span>
         </StyledVoteButton>
-      </div>
+      </section>
     );
   }
 }

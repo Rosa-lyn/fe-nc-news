@@ -57,7 +57,7 @@ class Articles extends Component {
     if (isLoading) return <Loader />;
     if (err) return <ErrorPage {...err} />;
     return (
-      <div>
+      <section>
         <StyledFilterSection>
           <StyledFilterButton
             onClick={() => {
@@ -83,7 +83,7 @@ class Articles extends Component {
         </StyledFilterSection>
 
         <ArticleList articles={articles} />
-      </div>
+      </section>
     );
   }
 }

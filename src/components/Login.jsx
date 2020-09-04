@@ -19,21 +19,19 @@ class Login extends Component {
   };
   render() {
     return (
-      <div>
-        <StyledLoginForm action="" onSubmit={this.handleLoginSubmit}>
-          <label htmlFor="users">Choose a user:</label>
-          <select name="users" id="users" onChange={this.handleUserChange}>
-            <option value="null"></option>
-            <option value="tickle122">tickle122</option>
-            <option value="grumpy19">grumpy19</option>
-            <option value="happyamy2016">happyamy2016</option>
-            <option value="cooljmessy">cooljmessy</option>
-            <option value="weegembump">weegembump</option>
-            <option value="jessjelly">jessjelly</option>
-          </select>
-          <StyledLoginButton type="submit" value="Login" />
-        </StyledLoginForm>
-      </div>
+      <StyledLoginForm action="" onSubmit={this.handleLoginSubmit}>
+        <label htmlFor="users">Choose a user:</label>
+        <select name="users" id="users" onChange={this.handleUserChange}>
+          <option value="null"></option>
+          <option value="tickle122">tickle122</option>
+          <option value="grumpy19">grumpy19</option>
+          <option value="happyamy2016">happyamy2016</option>
+          <option value="cooljmessy">cooljmessy</option>
+          <option value="weegembump">weegembump</option>
+          <option value="jessjelly">jessjelly</option>
+        </select>
+        <StyledLoginButton type="submit" value="Login" />
+      </StyledLoginForm>
     );
   }
 }

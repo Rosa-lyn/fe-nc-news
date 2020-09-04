@@ -3,13 +3,13 @@ import React from "react";
 const ErrorPage = (props) => {
   const { msg } = props;
   return (
-    <div>
+    <section>
       <p>Sorry! {msg}</p>
       <img
         src="https://media.giphy.com/media/KDRv3QggAjyo/giphy.gif"
         alt="Tobey Maguire crying GIF"
       />
-    </div>
+    </section>
   );
 };
 

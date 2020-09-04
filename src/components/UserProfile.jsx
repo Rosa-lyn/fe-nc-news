@@ -10,10 +10,10 @@ function UserProfile(props) {
   return (
     <StyledProfileLayout>
       <StyledUserImg src={user.avatar_url} alt={user.name} />
-      <div>
+      <section>
         <h2>{user.name}</h2>
         <h3>{user.username}</h3>
-      </div>
+      </section>
     </StyledProfileLayout>
   );
 }

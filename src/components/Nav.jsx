@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Loader from "./Loader";
-import { StyledNavList, StyledNavListItem } from "../styles/navStyles";
+import { StyledNavList } from "../styles/navStyles";
 import { StyledNavLink } from "../styles/linkStyles";
 import * as api from "../utils/api";
 
@@ -29,21 +29,21 @@ class Nav extends Component {
     return (
       <nav>
         <StyledNavList>
-          <StyledNavListItem key="all">
+          <li key="all">
             <StyledNavLink to="/" getProps={isActive}>
               all
             </StyledNavLink>
-          </StyledNavListItem>
+          </li>
           {topics.map((topic) => {
             return (
-              <StyledNavListItem key={topic.slug}>
+              <li key={topic.slug}>
                 <StyledNavLink
                   to={`/articles/topics/${topic.slug}`}
                   getProps={isActive}
                 >
                   {topic.slug}
                 </StyledNavLink>
-              </StyledNavListItem>
+              </li>
             );
           })}
         </StyledNavList>

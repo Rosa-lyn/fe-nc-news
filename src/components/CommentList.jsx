@@ -28,7 +28,7 @@ class CommentList extends Component {
     const { article_id, currentUser } = this.props;
     if (isLoading) return <Loader />;
     return (
-      <div>
+      <section>
         <CommentAdder
           article_id={article_id}
           currentUser={currentUser}
@@ -45,7 +45,7 @@ class CommentList extends Component {
             </StyledCommentList>
           );
         })}
-      </div>
+      </section>
     );
   }
 }

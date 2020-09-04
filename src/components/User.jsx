@@ -36,10 +36,10 @@ class User extends Component {
     if (isLoading) return <Loader />;
     if (err) return <ErrorPage {...err} />;
     return (
-      <div>
+      <section>
         <UserProfile user={user} />
         <Articles author={username} />
-      </div>
+      </section>
     );
   }
 }
