@@ -16,6 +16,14 @@ To get a copy of this project onto your own machine, fork the repo, then clone i
 git clone <URL-of-your-forked-repo>
 ```
 
+You will need Node.js (minimum version 14.3.0) to run the app locally. To check if you have the correct version, run:
+
+```
+node -v
+```
+
+If you need to, you can download Node [here](https://nodejs.org/en/).
+
 ### Installing
 
 To install all the necessary dependencies, run `npm i`. This will install:
