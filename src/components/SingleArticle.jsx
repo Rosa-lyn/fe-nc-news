@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Link } from "@reach/router";
 import moment from "moment";
 import CommentList from "./CommentList";
 import Loader from "./Loader";

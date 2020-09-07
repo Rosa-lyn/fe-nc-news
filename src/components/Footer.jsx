@@ -10,6 +10,7 @@ function Footer() {
           className="footerLink"
           href="https://rosa-lyn.github.io/"
           target="_blank"
+          rel="noopener noreferrer"
         >
           Rosalyn Land
         </a>
@@ -18,6 +19,7 @@ function Footer() {
           className="footerLink"
           href="https://northcoders.com/"
           target="_blank"
+          rel="noopener noreferrer"
         >
           Northcoders
         </a>{" "}
