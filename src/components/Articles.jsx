@@ -2,16 +2,13 @@ import React, { Component } from "react";
 import ArticleList from "./ArticleList";
 import Loader from "./Loader";
 import ErrorPage from "./ErrorPage";
-import {
-  StyledFilterButton,
-  StyledFilterSection,
-} from "../styles/filterButtonStyles";
+import { StyledFilterForm } from "../styles/filterBarStyles";
 import * as api from "../utils/api";
 
 class Articles extends Component {
   state = {
     articles: [],
-    sort_by: null,
+    sort_by: "votes",
     p: 1,
     maxPage: Infinity,
     isLoading: true,
@@ -65,8 +62,9 @@ class Articles extends Component {
     return api.getArticles(topic, author, sort_by, p);
   }
 
-  sortBy = (sortProperty) => {
-    this.setState({ sort_by: sortProperty });
+  sortArticles = (event) => {
+    const sort_by = event.target.value;
+    this.setState({ sort_by });
   };
 
   changePage = (direction) => {
@@ -81,29 +79,21 @@ class Articles extends Component {
     if (err) return <ErrorPage {...err} />;
     return (
       <section>
-        <StyledFilterSection>
-          <StyledFilterButton
-            onClick={() => {
-              this.sortBy("votes");
-            }}
-          >
-            most loved
-          </StyledFilterButton>
-          <StyledFilterButton
-            onClick={() => {
-              this.sortBy("created_at");
-            }}
-          >
-            most recent
-          </StyledFilterButton>
-          <StyledFilterButton
-            onClick={() => {
-              this.sortBy("comment_count");
-            }}
-          >
-            most talked about
-          </StyledFilterButton>
-        </StyledFilterSection>
+        <StyledFilterForm>
+          <label htmlFor="sort-articles">
+            sort by:{" "}
+            <select
+              name="sort-articles"
+              id="sort-articles"
+              value={this.state.sort_by}
+              onChange={this.sortArticles}
+            >
+              <option value="votes">most loved</option>
+              <option value="created_at">most recent</option>
+              <option value="comment_count">most talked about</option>
+            </select>
+          </label>
+        </StyledFilterForm>
 
         <ArticleList articles={articles} />
         <span>
