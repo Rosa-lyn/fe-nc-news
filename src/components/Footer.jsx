@@ -6,11 +6,19 @@ function Footer() {
     <StyledFooter>
       <StyledFooterP>
         Created by{" "}
-        <a className="footerLink" href="https://rosa-lyn.github.io/">
+        <a
+          className="footerLink"
+          href="https://rosa-lyn.github.io/"
+          target="_blank"
+        >
           Rosalyn Land
         </a>
         <br></br> at{" "}
-        <a className="footerLink" href="https://northcoders.com/">
+        <a
+          className="footerLink"
+          href="https://northcoders.com/"
+          target="_blank"
+        >
           Northcoders
         </a>{" "}
         bootcamp
