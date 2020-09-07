@@ -1,9 +1,14 @@
 import React from "react";
-import { StyledArticleCard, NoMarginP } from "../styles/articleCardStyles";
+import moment from "moment";
+import {
+  StyledArticleCard,
+  StyledArticleCardPara,
+  StyledUpvotesPara,
+} from "../styles/articleCardStyles";
 import { StyledUserLink, StyledTitleLink } from "../styles/linkStyles";
 
 function ArticleCard(props) {
-  const { article_id, title, author, comment_count, votes } = props;
+  const { article_id, title, author, comment_count, votes, created_at } = props;
   return (
     <StyledArticleCard>
       <h3>
@@ -11,25 +16,28 @@ function ArticleCard(props) {
           {title}
         </StyledTitleLink>
       </h3>
-      <NoMarginP>
+      <StyledArticleCardPara>
         by <StyledUserLink to={`/users/${author}`}>{author}</StyledUserLink>
-      </NoMarginP>
-      <NoMarginP>
+      </StyledArticleCardPara>
+      <StyledArticleCardPara>
+        on {moment(created_at).format("Do MMM YYYY")}
+      </StyledArticleCardPara>
+      <StyledArticleCardPara>
         <span
           className="far fa-comments"
           role="img"
           aria-label="comments"
         ></span>{" "}
         {comment_count} comments
-      </NoMarginP>
-      <NoMarginP>
+      </StyledArticleCardPara>
+      <StyledUpvotesPara>
         <span
           className="fas fa-arrow-up"
           role="img"
           aria-label="upvotes"
         ></span>{" "}
         {votes} upvotes
-      </NoMarginP>
+      </StyledUpvotesPara>
     </StyledArticleCard>
   );
 }

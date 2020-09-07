@@ -9,6 +9,7 @@ export const StyledCommentCard = styled.section`
   margin: 10px;
   padding: 10px;
   text-align: left;
+  box-shadow: 5px 5px 10px lightgrey;
 `;
 
 export const StyledDeleteButton = styled.button`

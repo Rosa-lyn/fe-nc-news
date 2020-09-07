@@ -15,6 +15,8 @@ export const StyledLoginButton = styled.input`
   border: none;
   margin: 5px;
   padding: 5px;
+  box-shadow: 5px 5px 10px lightgrey;
+
   &:hover {
     background-color: #e6b40f;
   }

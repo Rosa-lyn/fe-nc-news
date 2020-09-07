@@ -9,7 +9,14 @@ export const StyledArticleCard = styled.section`
   background-color: #f2c32c;
   margin: 10px;
   padding: 10px;
+  box-shadow: 5px 5px 10px lightgrey;
 `;
-export const NoMarginP = styled.p`
+export const StyledArticleCardPara = styled.p`
   margin: 0;
+  font-size: 85%;
+`;
+export const StyledUpvotesPara = styled.p`
+  margin: 0;
+  font-size: 85%;
+  margin-bottom: 18.72px;
 `;

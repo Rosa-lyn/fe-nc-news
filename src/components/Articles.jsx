@@ -3,6 +3,7 @@ import ArticleList from "./ArticleList";
 import Loader from "./Loader";
 import ErrorPage from "./ErrorPage";
 import { StyledFilterForm } from "../styles/filterBarStyles";
+import { StyledPrevNextButton } from "../styles/prevNextButtonStyles";
 import * as api from "../utils/api";
 
 class Articles extends Component {
@@ -97,13 +98,19 @@ class Articles extends Component {
 
         <ArticleList articles={articles} />
         <span>
-          <button onClick={() => this.changePage(-1)} disabled={p === 1}>
-            prev
-          </button>{" "}
+          <StyledPrevNextButton
+            onClick={() => this.changePage(-1)}
+            disabled={p === 1}
+          >
+            {"<"}
+          </StyledPrevNextButton>{" "}
           {p} of {maxPage}{" "}
-          <button onClick={() => this.changePage(1)} disabled={p === maxPage}>
-            next
-          </button>
+          <StyledPrevNextButton
+            onClick={() => this.changePage(1)}
+            disabled={p === maxPage}
+          >
+            {">"}
+          </StyledPrevNextButton>
         </span>
       </section>
     );

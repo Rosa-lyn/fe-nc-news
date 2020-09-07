@@ -11,6 +11,7 @@ import {
   StyledArticleAuthor,
   StyledArticleBody,
 } from "../styles/singleArticleStyles";
+import { StyledUserLink } from "../styles/linkStyles";
 import * as api from "../utils/api";
 
 class SingleArticle extends Component {
@@ -52,7 +53,10 @@ class SingleArticle extends Component {
             {moment(article.created_at).format("dddd Do MMMM YYYY")}
           </StyledArticleDate>
           <StyledArticleAuthor>
-            by <Link to={`/users/${article.author}`}>{article.author}</Link>
+            by{" "}
+            <StyledUserLink to={`/users/${article.author}`}>
+              {article.author}
+            </StyledUserLink>
           </StyledArticleAuthor>
           <StyledArticleBody>{article.body}</StyledArticleBody>
           <Voter votes={votes} id={article_id} type="articles" />

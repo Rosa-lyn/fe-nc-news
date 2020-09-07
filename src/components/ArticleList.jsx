@@ -15,6 +15,7 @@ function ArticleList(props) {
               votes={article.votes}
               comment_count={article.comment_count}
               article_id={article.article_id}
+              created_at={article.created_at}
             />
           </li>
         );
